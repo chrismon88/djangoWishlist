@@ -14,7 +14,7 @@ class Place(models.Model):
     photo = models.ImageField(upload_to='user_images/', blank=True, null=True)
 
 
-    def save(self, *arg, **kwargs):
+    def save(self, *args, **kwargs):
         old_place = Place.objects.filter(pk=self.pk).first()
         if old_place and old_place.photo:
             if old_place.photo != self.photo:
