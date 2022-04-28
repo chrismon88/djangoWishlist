@@ -20,7 +20,7 @@
     <h3>Photo</h3>
 
     {% if place.photo %}
-        <img src="{{ place.photo.url}}">
+        <img src="{{ place.photo.url }}">
     {% else %}
         <p>No photo uploaded.</p>
     {% endif %}
@@ -44,7 +44,7 @@
 
 
 {% else %} 
-    <p>You have not visited {{ place.name }}</p>
+    <p>You have not visited {{ place.name }} yet.</p>
 
     <form action="{% url 'place_was_visited' place.pk %}" method="POST">
         {% csrf_token %} 

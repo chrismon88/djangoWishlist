@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from pkg_resources import require
+#from pkg_resources import require
 from .models import Place
 from .forms import NewPlaceForm, TripReviewForm
 from django.contrib.auth.decorators import login_required
@@ -51,7 +51,7 @@ def place_was_visited(request, place_pk):
     return redirect ('place_list')
 
 @login_required
-def place_details(request,place_pk):
+def place_details(request, place_pk):
     place = get_object_or_404(Place, pk=place_pk)
 
     # Does thiss place belong to current user?
